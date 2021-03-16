@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    
+    <title>Domo Studio</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand col-md" href="index.html">
+          <img class="logo" src="img/logo/logosf.png" alt="Logo" />
+        </a>
+
+        <button
+          class="navbar-toggler ml-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav
+          class="collapse navbar-collapse barra_navegacion justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="proyectos.html">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cotizador.html">Cotizador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contactanos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1 class="sobre_banner titulo">Cotiza tus sueños</h1>
+
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide mover_abajo position-relative"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item item active">
+            <img
+              src="img/proyectos/07.jpg"
+              class="d-block w-100 fotos_carrusel"
+              alt="..."
+            />
+          </div>
+          
+        </div>
+      </div>
+    </header>
+
+    <section class="container">
+      <form>
+        <div class="form-group">
+          <label for="numeroRenders">Nombres</label>
+          <input type="text" class="form-control" id="nombres" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+          <label for="numeroRenders">Apellidos</label>
+          <input type="text" class="form-control" id="apellidos" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+          <label for="numeroRenders">Correo</label>
+          <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+          <label for="numeroRenders">Telefono</label>
+          <input type="text" class="form-control" id="telefono" aria-describedby="emailHelp">
+        </div>
+      </form>
+    </section>
+    
+
+    <section class="container">
+      <h1 id="saludo"></h1>
+
+      <form>
+        <div class="form-group">
+          <label for="numeroRenders">Numero de renders</label>
+          <input type="text" class="form-control" id="numeroRenders" aria-describedby="emailHelp">
+          <small id="textoNumRenders" class="form-text text-muted">Escribe el numero de renders que deseas cotizar para tu proyecto</small>
+        </div>
+
+        
+          <div class="form-group">
+            <label for="lugarRenders">Interiores o Exteriores</label>
+            <select class="form-control" id="lugarRenders">
+              <option value="" selected>Escoge una opcion</option>
+              <option value="interior">Interior</option>
+              <option value="exterior">Exterior</option>
+            </select>
+            <small id="textoLugRenders" class="form-text text-muted">Escoge el que tipo de renders, si son interior o exterior</small>
+          </div>
+
+          
+            <div class="form-group">
+              <label for="calidadRenders">Interiores o Exteriores</label>
+              <select class="form-control" id="calidadRenders">
+                <option value="" selected>Escoge una opcion</option>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="media">Baja</option>
+              </select>
+              <small id="textoCalRenders" class="form-text text-muted">Escoge que calidad quieres para tus renders</small>
+            </div>
+
+        <button type="submit" class="btn btn-primary" id="calcular">Submit</button>
+      </form>
+    </section>
+    
+
+    <footer>
+      <div class="container-fluid navbar navbar-expand-md navbar-light footer">
+        <a class="navbar-brand col-md" href="index.html">
+          <img class="logo" src="img/logo/Logo negro.png" alt="Logo" />
+        </a>
+
+        <nav
+          class="collapse navbar-collapse barra_navegacion_footer justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="empresas.html">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personas.html">Cotizador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contactanos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/cotizador.js"></script>
+  </body>
+</html>
