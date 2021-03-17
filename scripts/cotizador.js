@@ -1,22 +1,22 @@
-let nombre = localStorage.getItem('Nombre');
-let apellido = localStorage.getItem('Apellido')
-let correo = localStorage.getItem('Correo')
-let telefono = localStorage.getItem('Telefono')
 
-let usuario = {
-    'Nombre': nombre,
-    'Apellido': apellido,
-    'Correo': correo,
-    'Telefono': telefono
-}
-
-console.log(usuario['Nombre'] + ' ' + usuario['Apellido']);
+let numRender = document.getElementById('numeroRenders').value;
+let lugRender = document.getElementById('lugarRenders').value;
+let calRender = document.getElementById('calidadRenders').value;
+let saludo = document.getElementById('saludo');
+let nR = document.getElementById('nR');
+let lR = document.getElementById('lR');
+let cR = document.getElementById('cR');
+let resultado = document.getElementById('total');
 
 
-let saludar = document.getElementById('saludo')
-saludar.innerHTML = 'Hola ' + usuario['Nombre']
+
+
+
+
 
 let eleRenders = ['Numero de renders', 'Calidad de reders', 'Lugar de renders', 'Total de renders']
+
+let calcular = document.getElementById('calcular')
 
 class Cotizador{
     constructor(numeroRenders, intOEx, calidad){
@@ -57,15 +57,19 @@ class Cotizador{
 
     cali = function (){
         let total = this.getTotal()    
-        alert(
-            eleRenders[0]+': '+this.numeroRenders+', '+
-            eleRenders[2]+': '+this.intOEx+', '+
-            eleRenders[1]+': '+ this.calidad+', '+
-            eleRenders[3]+': '+total
-        ) 
+       
+        nR.innerHTML = 'Su total es de: ' + total;
     }
 }
 
-var cotiza = new Cotizador(prompt('Ingrese el numero de render'), prompt('interior o exterior'), prompt('Calidad alta, media o baja'))
-cotiza.cali()
 
+
+
+
+
+
+calcular.onclick = function(){
+    var cotiza = new Cotizador(numRender, lugRender, calRender)
+    cotiza.cali();
+    
+}
