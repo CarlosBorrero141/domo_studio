@@ -111,6 +111,23 @@ div.desc {
   text-align: center;
 }
 
+.borde {
+  margin-top: 10rem;
+  border: solid 2px #919191;
+  border-radius: 2rem;
+}
+
+.formulario {
+  margin: 3rem;
+  margin-bottom: 5rem;
+}
+
+.titulo_form {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .footer {
   background-color: black;
   margin-top: 5rem;

@@ -1,13 +1,46 @@
 
-let numRender = document.getElementById('numeroRenders').value;
-let lugRender = document.getElementById('lugarRenders').value;
-let calRender = document.getElementById('calidadRenders').value;
-let saludo = document.getElementById('saludo');
+let numRender = document.getElementById('numeroRenders')
+let lugRender = document.getElementById('lugarRenders')
+let calRender = document.getElementById('calidadRenders')
+let saludo = document.getElementById('saludar');
 let nR = document.getElementById('nR');
 let lR = document.getElementById('lR');
 let cR = document.getElementById('cR');
 let resultado = document.getElementById('total');
+let nombre = document.getElementById('nombres');
+let apellidos = document.getElementById('apellidos')
+let correo = document.getElementById('correo')
+let telefono = document.getElementById('telefono')
+let form1 = document.getElementById('form_user')
+let form2 = document.getElementById('form_coti')
 
+class Usuario{
+    constructor(nombre, apellidos, correo, telefono){
+        this.Nombre = nombre;
+        this.Apellido = apellidos;
+        this.correo = correo;
+        this.telefono = parseInt(telefono)
+    }
+
+    newUser = function (){
+        let userJson = {
+            "Nombre": this.Nombre,
+            "Apellido": this.Apellido,
+            "Correo": this.correo,
+            "Telefono": this.telefono
+        }
+        console.log(userJson)
+        return userJson;
+    }
+
+   
+
+    saludar = function(){
+        saludo.innerHTML = 'Hola ' + this.Nombre; + ' como estas?, gracias por cotizar con nosotros'
+        
+        
+    }
+}
 
 
 
@@ -58,7 +91,7 @@ class Cotizador{
     cali = function (){
         let total = this.getTotal()    
        
-        nR.innerHTML = 'Su total es de: ' + total;
+        nR.innerHTML = 'El total para ' + this.numeroRenders + '  renders, ubicados en el ' + this.intOEx + ' con calidad ' + this.calidad + ' es de ' + total
     }
 }
 
@@ -69,7 +102,18 @@ class Cotizador{
 
 
 calcular.onclick = function(){
-    var cotiza = new Cotizador(numRender, lugRender, calRender)
+    var nuevoUsusario = new Usuario(nombre.value, apellidos.value, correo.value, telefono.value )
+    nuevoUsusario.newUser();
+    nuevoUsusario.saludar();
+    var cotiza = new Cotizador(numRender.value, lugRender.value, calRender.value)
     cotiza.cali();
+    form1.style.display = 'none'
+    form2.style.display = 'none'
+
     
+   
 }
+
+
+
+
