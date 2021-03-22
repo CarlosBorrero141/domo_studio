@@ -107,6 +107,14 @@ calcular.onclick = function(){
     nuevoUsusario.saludar();
     var cotiza = new Cotizador(numRender.value, lugRender.value, calRender.value)
     cotiza.cali();
+    sessionStorage.Nombre = nombre.value;
+    sessionStorage.Apellido = apellidos.value;
+    sessionStorage.Correo = correo.value;
+    sessionStorage.Telefono = telefono.value
+    console.log(sessionStorage.Nombre)
+    console.log(sessionStorage.Apellido)
+    console.log(sessionStorage.Correo)
+    console.log(sessionStorage.Telefono)
     form1.style.display = 'none'
     form2.style.display = 'none'
 
