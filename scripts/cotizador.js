@@ -1,18 +1,18 @@
 
-let numRender = document.getElementById('numeroRenders')
-let lugRender = document.getElementById('lugarRenders')
-let calRender = document.getElementById('calidadRenders')
-let saludo = document.getElementById('saludar');
-let nR = document.getElementById('nR');
-let lR = document.getElementById('lR');
-let cR = document.getElementById('cR');
-let resultado = document.getElementById('total');
-let nombre = document.getElementById('nombres');
-let apellidos = document.getElementById('apellidos')
-let correo = document.getElementById('correo')
-let telefono = document.getElementById('telefono')
-let form1 = document.getElementById('form_user')
-let form2 = document.getElementById('form_coti')
+let numRender = $('#numeroRenders')
+let lugRender = $('#lugarRenders')
+let calRender = $('#calidadRenders')
+let saludo = $('#saludar')
+let nR = $('#nR')
+let lR = $('#lR')
+let cR = $('#cR')
+let resultado = $('#total')
+let nombre = $('#nombres')
+let apellidos = $('#apellidos')
+let correo = $('#correo')
+let telefono = $('#telefono')
+let form1 = $('#form_user')
+let form2 = $('#form_coti')
 
 class Usuario{
     constructor(nombre, apellidos, correo, telefono){
@@ -105,7 +105,7 @@ calcular.onclick = function(){
     var nuevoUsusario = new Usuario(nombre.value, apellidos.value, correo.value, telefono.value )
     nuevoUsusario.newUser();
     nuevoUsusario.saludar();
-    var cotiza = new Cotizador(numRender.value, lugRender.value, calRender.value)
+    var cotiza = new Cotizador(numRender.v, lugRender.value, calRender.value)
     cotiza.cali();
     sessionStorage.Nombre = nombre.value;
     sessionStorage.Apellido = apellidos.value;
