@@ -14,6 +14,7 @@ let telefono = $('#telefono')
 let form1 = $('#form_user')
 let form2 = $('#form_coti')
 
+
 class Usuario{
     constructor(nombre, apellidos, correo, telefono){
         this.Nombre = nombre;
@@ -36,7 +37,7 @@ class Usuario{
    
 
     saludar = function(){
-        saludo.innerHTML = 'Hola ' + this.Nombre; + ' como estas?, gracias por cotizar con nosotros'
+        saludo.text('Hola ' + this.Nombre + ' como estas?, gracias por cotizar con nosotros');  
         
         
     }
@@ -49,7 +50,7 @@ class Usuario{
 
 let eleRenders = ['Numero de renders', 'Calidad de reders', 'Lugar de renders', 'Total de renders']
 
-let calcular = document.getElementById('calcular')
+let calcular = $('#calcular')
 
 class Cotizador{
     constructor(numeroRenders, intOEx, calidad){
@@ -91,7 +92,7 @@ class Cotizador{
     cali = function (){
         let total = this.getTotal()    
        
-        nR.innerHTML = 'El total para ' + this.numeroRenders + '  renders, ubicados en el ' + this.intOEx + ' con calidad ' + this.calidad + ' es de ' + total
+        nR.text('El total para ' + this.numeroRenders + '  renders, ubicados en el ' + this.intOEx + ' con calidad ' + this.calidad + ' es de ' + total); 
     }
 }
 
@@ -101,26 +102,28 @@ class Cotizador{
 
 
 
-calcular.onclick = function(){
-    var nuevoUsusario = new Usuario(nombre.value, apellidos.value, correo.value, telefono.value )
+calcular.click( function(){
+    var nuevoUsusario = new Usuario(nombre.val(), apellidos.val(), correo.val(), telefono.val() )
     nuevoUsusario.newUser();
     nuevoUsusario.saludar();
-    var cotiza = new Cotizador(numRender.v, lugRender.value, calRender.value)
+    var cotiza = new Cotizador(numRender.val(), lugRender.val(), calRender.val())
     cotiza.cali();
-    sessionStorage.Nombre = nombre.value;
-    sessionStorage.Apellido = apellidos.value;
-    sessionStorage.Correo = correo.value;
-    sessionStorage.Telefono = telefono.value
-    console.log(sessionStorage.Nombre)
-    console.log(sessionStorage.Apellido)
-    console.log(sessionStorage.Correo)
-    console.log(sessionStorage.Telefono)
-    form1.style.display = 'none'
-    form2.style.display = 'none'
+    sessionStorage.Nombre = nombre.val();
+    sessionStorage.Apellido = apellidos.val();
+    sessionStorage.Correo = correo.val();
+    sessionStorage.Telefono = telefono.val();
+    console.log(sessionStorage.Nombre);
+    console.log(sessionStorage.Apellido);
+    console.log(sessionStorage.Correo);
+    console.log(sessionStorage.Telefono);
+    console.log(numRender.val());
+    form1.hide();
+    form2.hide();
+    
 
     
    
-}
+})
 
 
 
