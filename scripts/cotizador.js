@@ -15,6 +15,12 @@ let form1 = $('#form_user')
 let form2 = $('#form_coti')
 
 
+
+$('body').hide();
+
+$('body').ready(function() {
+    $('body').fadeIn('slow');
+})
 class Usuario{
     constructor(nombre, apellidos, correo, telefono){
         this.Nombre = nombre;
@@ -108,17 +114,19 @@ calcular.click( function(){
     nuevoUsusario.saludar();
     var cotiza = new Cotizador(numRender.val(), lugRender.val(), calRender.val())
     cotiza.cali();
-    sessionStorage.Nombre = nombre.val();
-    sessionStorage.Apellido = apellidos.val();
-    sessionStorage.Correo = correo.val();
-    sessionStorage.Telefono = telefono.val();
-    console.log(sessionStorage.Nombre);
-    console.log(sessionStorage.Apellido);
-    console.log(sessionStorage.Correo);
-    console.log(sessionStorage.Telefono);
+    localStorage.Nombre = nombre.val();
+    localStorage.Apellido = apellidos.val();
+    localStorage.Correo = correo.val();
+    localStorage.Telefono = telefono.val();
+    console.log(localStorage.Nombre);
+    console.log(localStorage.Apellido);
+    console.log(localStorage.Correo);
+    console.log(localStorage.Telefono);
     console.log(numRender.val());
-    form1.hide();
-    form2.hide();
+    form1.slideToggle();
+    form2.slideToggle();
+
+    
     
 
     
