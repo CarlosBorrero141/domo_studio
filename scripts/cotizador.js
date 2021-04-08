@@ -1,4 +1,4 @@
-
+const datos = "../datos/datos.json"
 let numRender = $('#numeroRenders')
 let lugRender = $('#lugarRenders')
 let calRender = $('#calidadRenders')
@@ -99,6 +99,25 @@ class Cotizador{
         let total = this.getTotal()    
        
         nR.text('El total para ' + this.numeroRenders + '  renders, ubicados en el ' + this.intOEx + ' con calidad ' + this.calidad + ' es de ' + total); 
+        let usuario = {
+            'Nombre': nombre.val(),
+            'Apellido': apellidos.val(),
+            'Correo': correo.val(),
+            'Telefono': telefono.val(),
+            'Numero de Renders': numRender.val(),
+            'Lugar de Renders': lugRender.val(),
+            'Calidad de Renders': calRender.val(),
+            'Total Cotizacion': total
+        }
+        console.log(usuario)
+
+        $.post(datos, usuario,(respuesta, estado) => {
+            if(estado === "success"){
+                $('#resultado').prepend(`<h2> Guardado: ${respuesta.Nombre} </h2>`)
+            }
+        })
+
+        
     }
 }
 
@@ -114,15 +133,6 @@ calcular.click( function(){
     nuevoUsusario.saludar();
     var cotiza = new Cotizador(numRender.val(), lugRender.val(), calRender.val())
     cotiza.cali();
-    localStorage.Nombre = nombre.val();
-    localStorage.Apellido = apellidos.val();
-    localStorage.Correo = correo.val();
-    localStorage.Telefono = telefono.val();
-    console.log(localStorage.Nombre);
-    console.log(localStorage.Apellido);
-    console.log(localStorage.Correo);
-    console.log(localStorage.Telefono);
-    console.log(numRender.val());
     form1.slideToggle();
     form2.slideToggle();
 
