@@ -16,11 +16,10 @@ let form2 = $('#form_coti')
 
 
 
-$('body').hide();
+$('body').hide()
+        .fadeIn('slow')
 
-$('body').ready(function() {
-    $('body').fadeIn('slow');
-})
+
 class Usuario{
     constructor(nombre, apellidos, correo, telefono){
         this.Nombre = nombre;
@@ -135,6 +134,7 @@ calcular.click( function(){
     cotiza.cali();
     form1.slideToggle();
     form2.slideToggle();
+    
 
     
     
