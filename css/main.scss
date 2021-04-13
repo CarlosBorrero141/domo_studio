@@ -23,6 +23,19 @@ label {
   font-size: 1.5rem;
 }
 
+.boton-paquetes{
+  width: 100%;
+  margin-top: 5rem;
+  padding: 3rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  margin-right: 5rem;
+}
+
+.boton-paquetes:last-of-type{
+  margin-right: 0rem;
+}
+
 .sobre_banner{
   position: absolute;
   width: 100%;
