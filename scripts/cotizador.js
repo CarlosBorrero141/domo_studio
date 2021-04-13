@@ -1,4 +1,5 @@
 const datos = "../datos/paquetes.json";
+const post = "https://jsonplaceholder.typicode.com/posts";
 let usuarioAnt = JSON.parse(localStorage.newU)
 console.log(usuarioAnt)
 let numRender = $("#numeroRenders");
@@ -34,12 +35,27 @@ calcular.click(function () {
     correo.val(),
     telefono.val()
   );
+  var usuarioAPI = {
+    title: nombre.val(),
+    body: telefono.val()
+  }
   nuevoUsusario.newUser();
   nuevoUsusario.saludar();
   var cotiza = new Cotizador(numRender.val(), lugRender.val(), calRender.val());
   cotiza.cali();
   form1.slideToggle();
   form2.slideToggle();
+
+    $.post(post, usuarioAPI ,(respuesta, estado) => {
+      if(estado === "success"){
+        $("body").prepend(
+          `<div>
+          Guardado:${respuesta.title}
+          </div>`
+        );
+      }
+    })
+
 });
 
 $("#paquetes").click(function () {
@@ -54,7 +70,7 @@ $("#paquetes").click(function () {
     if (estado === "success") {
       for (let dato of respuesta) {
         $("#vp").prepend(
-          `<div class="container borde paquetes" id="vp1">
+          `<div class="container borde paquetes col-md" id="vp1">
                         <h2>${dato.Titulo}</h2>
                         <p> Numero de renders: ${dato["Numero de renders"]}</p>
                         <p> Lugar de renders: ${dato["Localizacion de renders"]}</p>
