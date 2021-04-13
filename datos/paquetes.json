@@ -1,0 +1,19 @@
+[
+    {
+        "Titulo": "Paquete de Renders de exterior",
+        "Numero de renders": 5,
+        "Localizacion de renders": "exterior",
+        "Calidad de renders": "alta",
+        "Total": "$2'500.000"
+    },
+
+    {
+        "Titulo": "Paquete de Renders de interior",
+        "Numero de renders": 5,
+        "Localizacion de renders": "interior",
+        "Calidad de renders": "interior",
+        "Total": "$2'250.000"
+    }
+
+   
+]

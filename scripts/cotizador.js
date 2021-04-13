@@ -1,4 +1,5 @@
-const datos = "../datos/datos.json"
+const datos = "../datos/paquetes.json"
+
 let numRender = $('#numeroRenders')
 let lugRender = $('#lugarRenders')
 let calRender = $('#calidadRenders')
@@ -20,6 +21,7 @@ $('body').hide()
         .fadeIn('slow')
 
 
+        
 class Usuario{
     constructor(nombre, apellidos, correo, telefono){
         this.Nombre = nombre;
@@ -110,11 +112,7 @@ class Cotizador{
         }
         console.log(usuario)
 
-        $.post(datos, usuario,(respuesta, estado) => {
-            if(estado === "success"){
-                $('#resultado').prepend(`<h2> Guardado: ${respuesta.Nombre} </h2>`)
-            }
-        })
+        
 
         
     }
@@ -134,15 +132,31 @@ calcular.click( function(){
     cotiza.cali();
     form1.slideToggle();
     form2.slideToggle();
-    
 
-    
-    
-
-    
-   
 })
 
+
+$('#paquetes').click(function(){
+    console.log("Boton funciona")
+    
+    $.getJSON(datos, function(respuesta, estado){
+        console.log(respuesta)
+        if(estado === "success"){
+            for (let dato of respuesta){
+                $('#vp').prepend(
+                    `<div class="container borde">
+                        <h2>${dato.Titulo}</h2>
+                        <p> Numero de renders: ${dato["Numero de renders"]}</p>
+                        <p> Lugar de renders: ${dato["Localizacion de renders"]}</p>
+                        <p> Calidad de renders: ${dato["Calidad de renders"]}</p>
+                        <p> Precio: ${dato["Total"]}</p>
+
+                        </div>`
+                );
+            }
+        }
+    })
+})
 
 
 
